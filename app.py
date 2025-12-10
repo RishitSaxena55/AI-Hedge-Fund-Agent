@@ -7,6 +7,10 @@ import sys
 # ✅ CORRECT way to disable CrewAI telemetry
 os.environ["OTEL_SDK_DISABLED"] = "true"
 
+# Disable LiteLLM logging to suppress apscheduler errors
+logging.getLogger("LiteLLM").setLevel(logging.CRITICAL)
+logging.getLogger("litellm").setLevel(logging.CRITICAL)
+
 import streamlit as st
 import nltk
 
