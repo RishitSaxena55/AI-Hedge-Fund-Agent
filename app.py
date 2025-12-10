@@ -4,7 +4,7 @@
 import os
 import sys
 import logging
-import agentops
+
 
 # ✅ CORRECT way to disable CrewAI telemetry
 os.environ["OTEL_SDK_DISABLED"] = "true"
@@ -68,11 +68,7 @@ if run_btn:
         st.write("Initializing AI Crew...")
         
         try:
-            agentops.init(
-                api_key=st.secrets["AGENTOPS_API_KEY"], # Or os.environ for local
-                tags=["streamlit", "hedge-fund"],       # Helps you filter in dashboard
-                auto_start_session=False                # We start manually to be safe
-            )
+            
             agent = AiTradingAgent()
             result = agent.crew().kickoff(inputs=inputs)
             
