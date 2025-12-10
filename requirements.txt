@@ -9,4 +9,3 @@ nltk
 alpha_vantage
 fastapi
 agentops
-litellm[proxy]
