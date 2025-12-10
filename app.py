@@ -2,11 +2,12 @@
 # 0. CRITICAL FIX FOR STREAMLIT + CREWAI
 # ------------------------------------------------------------------
 import os
-# Disable CrewAI telemetry to prevent "signal only works in main thread" error
-os.environ["CREWAI_TELEMETRY_OPT_OUT"] = "true"
+import sys
+
+# ✅ CORRECT way to disable CrewAI telemetry
+os.environ["OTEL_SDK_DISABLED"] = "true"
 
 import streamlit as st
-import sys
 import nltk
 
 # ------------------------------------------------------------------
@@ -17,9 +18,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.download('punkt')
-    nltk.download('brown')
-    nltk.download('punkt_tab')
+    nltk.download('punkt', quiet=True)
+    nltk.download('brown', quiet=True)
+    nltk.download('punkt_tab', quiet=True)
 
 # ------------------------------------------------------------------
 # 2. IMPORT CREW
@@ -36,15 +37,13 @@ except ImportError as e:
 st.set_page_config(page_title="AI Hedge Fund Agent", page_icon="📈", layout="wide")
 
 st.title("🤖 AI Institutional Trading Agent")
-# st.markdown("### Powered by CrewAI & Llama 3.3 (Cerebras Inference)")
 
 with st.sidebar:
     st.header("Trade Settings")
     ticker = st.text_input("Stock Ticker", value="MSFT").upper()
-    amount = st.number_input("Capital ($)", value=10000)
+    amount = st.number_input("Capital ($)", value=10000, min_value=100)
     period = st.selectbox("Analysis Window", ["1mo", "3mo", "6mo", "1y"], index=1)
     
-    # st.info("⚠️ **Note:** Runs on Cerebras Free Tier (1M tokens/day).")
     run_btn = st.button("🚀 Launch Analysis", type="primary")
 
 if run_btn:
@@ -76,5 +75,5 @@ if run_btn:
             )
             
         except Exception as e:
-            st.error(f"Error: {e}")
-            print(e)
+            st.error(f"❌ Error: {e}")
+            st.exception(e)  # Shows full traceback in Streamlit
