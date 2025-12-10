@@ -18,7 +18,7 @@ except ImportError as e:
 st.set_page_config(page_title="AI Hedge Fund Agent", page_icon="📈", layout="wide")
 
 st.title("🤖 AI Institutional Trading Agent")
-st.markdown("### Powered by CrewAI & Llama 3.3 (Cerebras Inference)")
+# st.markdown("### Powered by CrewAI")
 
 # Sidebar for Inputs
 with st.sidebar:
