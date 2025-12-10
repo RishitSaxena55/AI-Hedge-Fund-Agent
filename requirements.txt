@@ -1,6 +1,6 @@
 streamlit
 crewai
-litellm
+litellm[proxy]
 yfinance
 python-dotenv
 textblob
