@@ -1,0 +1,199 @@
+gather_market_data:
+  description: >
+    Gather comprehensive market data for {stock_ticker}:
+    1. Current price, volume, and market cap
+    2. Historical price data for the past {analysis_period}
+    3. 52-week high/low and average volume
+    4. Market hours status and last trade information
+    5. Sector and industry classification
+    
+    Use the Get Real-Time Stock Data tool to fetch all required information.
+    Ensure data is current and accurate.
+  expected_output: >
+    A detailed market data report including:
+    - Current trading metrics
+    - Historical price summary
+    - Volume analysis
+    - Key support and resistance levels identified from price history
+  agent: market_data_analyst
+
+perform_technical_analysis:
+  description: >
+    Conduct comprehensive technical analysis for {stock_ticker}:
+    1. Calculate and interpret RSI (14-period) - identify overbought/oversold conditions
+    2. Analyze MACD histogram for momentum and potential reversals
+    3. Examine SMA (20, 50, 200) for trend direction and crossovers
+    4. Assess current trend strength and direction
+    5. Identify chart patterns and key support/resistance levels
+    6. Determine entry and exit price targets
+    
+    Use the Get Technical Indicators tool for indicator data.
+  expected_output: >
+    A comprehensive technical analysis report with:
+    - All indicator values with clear interpretations
+    - Trend analysis (bullish/bearish/neutral)
+    - Specific entry price target
+    - Take-profit levels (TP1, TP2, TP3)
+    - Stop-loss recommendation
+    - Confidence level (High/Medium/Low)
+  agent: technical_analyst
+
+analyze_fundamentals:
+  description: >
+    Perform detailed fundamental analysis for {stock_ticker}:
+    1. Evaluate valuation metrics (P/E, P/B, PEG ratio)
+    2. Assess profitability (margins, ROE, ROA)
+    3. Analyze financial health (debt levels, liquidity ratios)
+    4. Review growth metrics (revenue, earnings growth)
+    5. Compare with industry peers
+    6. Determine if stock is undervalued, fairly valued, or overvalued
+    
+    Use the Get Fundamental Data tool to fetch financial metrics.
+  expected_output: >
+    A detailed fundamental analysis report including:
+    - Valuation assessment with fair value estimate
+    - Financial health score (Strong/Moderate/Weak)
+    - Growth prospects analysis
+    - Competitive position
+    - Investment thesis (bullish/bearish/neutral)
+  agent: fundamental_analyst
+
+analyze_news_sentiment:
+  description: >
+    Analyze recent news and market sentiment for {stock_ticker}:
+    1. Gather all news from the past 7 days
+    2. Identify key events, earnings reports, or announcements
+    3. Assess overall sentiment (positive/negative/neutral)
+    4. Determine potential impact on stock price (high/medium/low)
+    5. Flag any major catalysts or red flags
+    
+    Use the Get Financial News tool to fetch recent news.
+  expected_output: >
+    A news sentiment analysis report with:
+    - Summary of key news items
+    - Overall sentiment score
+    - Potential price impact assessment
+    - Major catalysts or concerns
+    - Recommendation on timing (favorable/unfavorable/neutral)
+  agent: news_sentiment_analyst
+
+analyze_social_sentiment:
+  description: >
+    Analyze social media and retail trader sentiment for {stock_ticker}:
+    1. Scan StockTwits for trader messages and sentiment
+    2. Calculate overall sentiment (bullish/bearish/neutral)
+    3. Measure message volume and trader activity level
+    4. Identify sentiment trends (improving/declining/stable)
+    5. Detect extreme sentiment (euphoria or panic)
+    6. Review top influencer opinions
+    7. Assess if social sentiment aligns with or contradicts technical/fundamental analysis
+    
+    Use the Analyze StockTwits Sentiment tool.
+  expected_output: >
+    A comprehensive social sentiment report including:
+    - Total messages analyzed and activity level
+    - Sentiment breakdown (bullish/bearish/neutral percentages)
+    - Bull/Bear ratio
+    - Sentiment trend direction
+    - Top influencer messages
+    - Trading implications and risk assessment
+    - Recommendation: Does social sentiment support the trade?
+  agent: social_sentiment_analyst
+
+
+assess_risk:
+  description: >
+    Conduct comprehensive risk assessment for trading {stock_ticker}:
+    1. Calculate appropriate position size based on {account_size} and 2% risk rule
+    2. Determine stop-loss level from technical analysis
+    3. Calculate risk-reward ratio (must be minimum 1:2)
+    4. Assess market volatility and beta
+    5. Identify potential risks (earnings date, regulatory, sector-specific)
+    6. Provide maximum loss amount in dollars
+  expected_output: >
+    A risk management report with:
+    - Recommended position size (shares and dollar amount)
+    - Stop-loss price level
+    - Risk-reward ratio
+    - Maximum potential loss
+    - Risk assessment score (Low/Medium/High)
+    - Risk mitigation strategies
+  agent: risk_manager
+
+optimize_portfolio_allocation:
+  description: >
+    Determine optimal portfolio allocation for {stock_ticker}:
+    1. Consider current portfolio holdings: {current_portfolio}
+    2. Assess correlation with existing positions
+    3. Calculate impact on portfolio diversification
+    4. Determine if position enhances or concentrates risk
+    5. Recommend allocation percentage
+    6. Consider sector exposure and concentration limits
+    
+    Use Calculate Portfolio Risk tool if needed for multi-asset analysis.
+  expected_output: >
+    A portfolio allocation recommendation with:
+    - Recommended allocation percentage
+    - Impact on portfolio risk metrics
+    - Diversification score
+    - Sector/industry exposure assessment
+    - Rebalancing suggestions if needed
+  agent: portfolio_strategist
+
+make_trading_decision:
+  description: >
+    Synthesize ALL analysis from the team and make a FINAL, ACTIONABLE trading decision for {stock_ticker}.
+    
+    Review and integrate all previous analysis from:
+    - Market data analyst
+    - Technical analyst
+    - Fundamental analyst
+    - News sentiment analyst
+    - Risk manager
+    - Portfolio strategist
+    
+    Make a CLEAR decision: BUY, SELL, or HOLD
+    
+    If BUY/SELL, provide:
+    - Exact entry price
+    - Position size (shares and dollars)
+    - Take-profit targets (TP1, TP2, TP3)
+    - Stop-loss level
+    - Expected holding period
+    - Confidence level (High/Medium/Low)
+    - Risk-reward ratio
+  expected_output: >
+    A comprehensive, actionable trading decision report:
+    
+    **DECISION: [BUY/SELL/HOLD]**
+    
+    **EXECUTION DETAILS:**
+    - Entry Price: $XX.XX
+    - Position Size: XXX shares ($X,XXX)
+    - Stop-Loss: $XX.XX (risk: $XXX)
+    - Target 1: $XX.XX (reward: $XXX)
+    - Target 2: $XX.XX (reward: $XXX)
+    - Target 3: $XX.XX (reward: $XXX)
+    - Risk-Reward Ratio: X:X
+    - Holding Period: X days/weeks
+    - Confidence: High/Medium/Low
+    
+    **RATIONALE:**
+    [2-3 paragraph synthesis of all analysis explaining the decision]
+    
+    **KEY FACTORS:**
+    - Technical: [summary]
+    - Fundamental: [summary]
+    - Sentiment: [summary]
+    - Risk: [summary]
+    
+    **EXECUTION PLAN:**
+    [Step-by-step execution instructions]
+    
+    **MONITORING PLAN:**
+    [What to watch after entering the trade]
+  agent: head_trader
+  output_file: 'trading_decision_{stock_ticker}.md'
+
+
+
