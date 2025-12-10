@@ -1,6 +1,6 @@
 streamlit
 crewai
-crewai[cerebras]
+litellm
 yfinance
 python-dotenv
 textblob
