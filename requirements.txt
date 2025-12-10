@@ -6,3 +6,4 @@ python-dotenv
 textblob
 crewai-tools
 nltk
+alpha_vantage
