@@ -2,12 +2,11 @@ import streamlit as st
 import sys
 import os
 import asyncio
-# from ai_trading_agent.crew import AiTradingAgent # Uncomment if using module import
-# For simple deployment, often copying the class directly or adjusting path is easier
+
 # Assuming your folder structure, we add the src path:
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from ai_trading_agent.crew import AiTradingAgent
+from src.ai_trading_agent.crew import AiTradingAgent
 
 st.set_page_config(page_title="AI Hedge Fund Agent", page_icon="📈", layout="wide")
 
@@ -33,25 +32,15 @@ if run_btn:
         'current_portfolio': 'None'
     }
     
-    st.status("💡 Agents are thinking...", expanded=True) as status:
+    # 👇 FIXED: Added 'with' keyword here
+    with st.status("💡 Agents are thinking...", expanded=True) as status:
         st.write("Initializing AI Crew...")
-        
-        # Capture standard output to display logs in UI
-        class StreamlitCapture(object):
-            def write(self, data):
-                # Filter out raw escape codes if needed, or just log
-                if data.strip():
-                    st.text(data) # Print agent thoughts to UI
-            def flush(self):
-                pass
-        
-        # Redirect stdout to Streamlit
-        # (Note: CrewAI logs are tricky, sometimes they print directly to terminal)
-        # For a simple demo, we just run it and show the final result.
         
         try:
             agent = AiTradingAgent()
             result = agent.crew().kickoff(inputs=inputs)
+            
+            # Update status to complete
             status.update(label="✅ Analysis Complete!", state="complete", expanded=False)
             
             # Parsing and Displaying the Result
@@ -69,3 +58,5 @@ if run_btn:
             
         except Exception as e:
             st.error(f"Error: {e}")
+            # print full error to logs for debugging
+            print(e)
