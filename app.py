@@ -9,12 +9,6 @@ import logging
 # ✅ CORRECT way to disable CrewAI telemetry
 os.environ["OTEL_SDK_DISABLED"] = "true"
 
-# 2. Hide LiteLLM Debug Logs (Cleans up the UI)
-os.environ["LITELLM_LOG"] = "ERROR" 
-
-# 3. Force Python Logger to be quiet
-logging.getLogger("litellm").setLevel(logging.ERROR)
-
 
 
 import streamlit as st

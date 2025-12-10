@@ -8,4 +8,4 @@ crewai-tools
 nltk
 alpha_vantage
 fastapi
-agentops
+
