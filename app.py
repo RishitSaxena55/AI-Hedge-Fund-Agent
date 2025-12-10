@@ -55,7 +55,7 @@ st.set_page_config(
 # Header Section
 st.title("🤖 AI Institutional Trading Agent")
 st.markdown("""
-**Your personal team of autonomous AI financial analysts.** *Powered by CrewAI & Llama 3.3 (via Cerebras Inference)*
+**Your personal team of autonomous AI financial analysts.** 
 """)
 
 # --- Sidebar Configuration ---
@@ -88,7 +88,7 @@ with st.sidebar:
     # The "Go" Button
     run_btn = st.button("🚀 Launch Analysis", type="primary", use_container_width=True)
     
-    st.caption("⚠️ **Note:** Runs on Cerebras Free Tier (1M tokens/day).")
+    # st.caption("⚠️ **Note:** Runs on Cerebras Free Tier (1M tokens/day).")
 
 # ==============================================================================
 # 🚀 MAIN EXECUTION LOOP
