@@ -27,7 +27,7 @@ with st.sidebar:
     amount = st.number_input("Capital ($)", value=10000)
     period = st.selectbox("Analysis Window", ["1mo", "3mo", "6mo", "1y"], index=1)
     
-    st.info("⚠️ **Note:** This runs on the Cerebras Free Tier (1M tokens/day).")
+    # st.info("⚠️ **Note:** This runs on the Cerebras Free Tier (1M tokens/day).")
     run_btn = st.button("🚀 Launch Analysis", type="primary")
 
 # Main Execution Area
