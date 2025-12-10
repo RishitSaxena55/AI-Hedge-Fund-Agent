@@ -36,7 +36,7 @@ except ImportError as e:
 st.set_page_config(page_title="AI Hedge Fund Agent", page_icon="📈", layout="wide")
 
 st.title("🤖 AI Institutional Trading Agent")
-st.markdown("### Powered by CrewAI & Llama 3.3 (Cerebras Inference)")
+# st.markdown("### Powered by CrewAI & Llama 3.3 (Cerebras Inference)")
 
 with st.sidebar:
     st.header("Trade Settings")
@@ -44,7 +44,7 @@ with st.sidebar:
     amount = st.number_input("Capital ($)", value=10000)
     period = st.selectbox("Analysis Window", ["1mo", "3mo", "6mo", "1y"], index=1)
     
-    st.info("⚠️ **Note:** Runs on Cerebras Free Tier (1M tokens/day).")
+    # st.info("⚠️ **Note:** Runs on Cerebras Free Tier (1M tokens/day).")
     run_btn = st.button("🚀 Launch Analysis", type="primary")
 
 if run_btn:
