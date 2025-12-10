@@ -3,10 +3,17 @@ import sys
 import os
 import asyncio
 
-# Assuming your folder structure, we add the src path:
+# 1. Add 'src' to the Python path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from src.ai_trading_agent.crew import AiTradingAgent
+# 2. FIXED IMPORT: Removed 'src.' prefix
+try:
+    from ai_trading_agent.crew import AiTradingAgent
+except ImportError as e:
+    # This helps debug if the folder structure is slightly different
+    st.error(f"Import Error: {e}")
+    st.info(f"Current Path: {sys.path}")
+    st.stop()
 
 st.set_page_config(page_title="AI Hedge Fund Agent", page_icon="📈", layout="wide")
 
@@ -32,7 +39,7 @@ if run_btn:
         'current_portfolio': 'None'
     }
     
-    # 👇 FIXED: Added 'with' keyword here
+    # Context manager 'with' allows the status container to update
     with st.status("💡 Agents are thinking...", expanded=True) as status:
         st.write("Initializing AI Crew...")
         
@@ -58,5 +65,4 @@ if run_btn:
             
         except Exception as e:
             st.error(f"Error: {e}")
-            # print full error to logs for debugging
             print(e)
