@@ -120,19 +120,6 @@ Follow the prompts to enter:
 
 ---
 
-## 📸 Screenshots
-
-### 🖥️ Main Interface
-![Main Interface](docs/images/interface.png)
-
-### 📊 Analysis in Progress
-![Analysis Progress](docs/images/progress.png)
-
-### 📄 Trading Report
-![Trading Report](docs/images/report.png)
-
----
-
 ## 🛠️ Tech Stack
 
 | Component | Technology |
@@ -367,16 +354,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/ai-hedge-fund-agent/issues)
-- **Discussions**: [Join the community](https://github.com/yourusername/ai-hedge-fund-agent/discussions)
-- **LinkedIn**: [Connect with the author](https://linkedin.com/in/yourprofile)
-- **Email**: your.email@example.com
+- **GitHub Issues**: [Report bugs or request features](https://github.com/RishitSaxena55/AI-Hedge-Fund-Agent/issues)
+- **Discussions**: [Join the community](https://github.com/RishitSaxena55/AI-Hedge-Fund-Agent/discussions)
+- **LinkedIn**: [Connect with the author]([https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/rishit-saxena-12922531b/))
+- **Email**: rishitsaxena55@gmail.com
 
 ---
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/ai-hedge-fund-agent&type=Date)](https://star-history.com/#yourusername/ai-hedge-fund-agent&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=RishitSaxena55/AI-Hedge-Fund-Agent&type=Date)](https://github.com/RishitSaxena55/AI-Hedge-Fund-Agent&Date)
 
 ---
 
@@ -384,8 +371,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **If you found this project helpful, please consider giving it a ⭐️!**
 
-Made with ❤️ by [Your Name](https://github.com/yourusername)
+Made with ❤️ by [](https://github.com/RishitSaxena55/AI-Hedge-Fund-Agent)
 
-[⬆ Back to Top](#-ai-hedge-fund-agent)
+[⬆ Back to Top](#-AI-Hedge-Fund-Agent)
 
 </div>
