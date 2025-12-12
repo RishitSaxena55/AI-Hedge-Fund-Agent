@@ -77,8 +77,8 @@ The **AI Hedge Fund Agent** is a sophisticated multi-agent system that replicate
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/ai-hedge-fund-agent.git
-cd ai-hedge-fund-agent
+git clone https://github.com/RishitSaxena55/AI-Hedge-Fund-Agent.git
+cd AI-Hedge-Fund-Agent
 ```
 
 2. **Install dependencies**
