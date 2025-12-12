@@ -7,7 +7,7 @@
 
 > **An institutional-grade, multi-agent AI trading system powered by Llama 3.3 70B and CrewAI that performs comprehensive stock analysis and generates actionable trading decisions.**
 
-[**🚀 Live Demo**](https://lnkd.in/dGJSxEZG) | [**📹 Watch Demo Video**](#) | [**📖 Documentation**](#getting-started)
+[**🚀 Live Demo**](https://ai-hedge-fund-agent.streamlit.app/) | [**📖 Documentation**](#getting-started)
 
 ---
 
